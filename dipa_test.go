@@ -3,7 +3,11 @@ package dipa
 import (
 	"fmt"
 	"testing"
+
+	"github.com/aiteung/atdb"
 )
+
+var MongoConn = atdb. MongoConnect(MongoInfo)
 
 
 func TestInsertlisttamu(t *testing.T) {
@@ -43,34 +47,4 @@ func TestInsertrapatmulai(t *testing.T) {
 	durasi := "satu jam"
 	hasil := Insertrapatmulai(pembicara, durasi)
 	fmt.Println(hasil)
-}
-
-func TestGetDatalisttamu(t *testing.T) {
-	name := "GABYAZANA"
-	dt := GetDatalisttamu(name)
-	fmt.Println(dt)
-}
-
-func TestGetDataUndanganRapat(t *testing.T) {
-	lokasi := "Auditorium"
-	dt := GetDataUndanganRapat(lokasi)
-	fmt.Println(dt)
-}
-
-func TestGetDatapesertarapat(t *testing.T) {
-	status := "Aktif"
-	dt := GetDatapesertarapat(status)
-	fmt.Println(dt)
-}
-
-func TestGetDatawakturapat(t *testing.T) {
-	hal := "rapat"
-	dt := GetDatawakturapat(hal)
-	fmt.Println(dt)
-}
-
-func TestGetDatarapatmulai(t *testing.T) {
-	pembicara := "Jokowi"
-	dt := GetDatarapatmulai(pembicara)
-	fmt.Println(dt)
 }

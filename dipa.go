@@ -114,7 +114,7 @@ func GetDataPesertaRapat(instansi string) (data []Pesertarapat) {
 	return
 }
 
-func GetDataWaktuRapat(materi string) (data []wakturapat) {
+func GetDataWaktuRapat(materi string) (data []Wakturapat) {
 	user := MongoConnect("dblisttamu").Collection("wakturapat")
 	filter := bson.M{"materi": materi}
 	cursor, err := user.Find(context.TODO(), filter)
